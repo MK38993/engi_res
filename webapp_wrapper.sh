@@ -3,6 +3,9 @@
 source ~/.zprofile
 source ~/.zshrc
 
+cd Metis
+cd engi-res
+
 python webapp.py
 
 
