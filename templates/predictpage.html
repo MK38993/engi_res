@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NYC Real-Estate Predictor</title>
+</head>
+<body>
+<h1 id="page_welcome">New York City Real-Estate Predictor</h1>
+
+
+<p1>
+
+	Inputs:<br><br>
+	{% for x in x_input %}
+		{{x}}: {{x_input[x]}}<br>
+	{% endfor %}
+	<br>
+	Predicted sale price:<br>$
+    {{prediction}}<br>
+    
+    
+  </p1>
+  
+<form action="/">
+  <br><input type="submit" value="Try different values?" method="get">
+
+
+</form>
+  
+  
+<br>
+<h4>Powered by Python/Flask/Heroku</h4>
+
+
+</body>
+</html>
+
+
+
+<style>
+/* CSS styles */
+  
+h1 {
+  font-family: Monaco;
+  color: #CE5937;
+}
+	
+h4 {
+  font-family: Monaco;
+  color: #CE5937;
+}  
+  
+h5 {
+  font-family: Monaco;
+  color: #CE5937;
+}  
+
+body {
+    background-color: #ffdfdf;
+}
+
+p1{
+font-family: Monaco;
+  color: #CE5937;
+}
+</style>  
+
