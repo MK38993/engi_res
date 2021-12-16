@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NYC Real-Estate Predictor</title>
+</head>
+<body>
+<h1 id="page_welcome">New York City Real-Estate Predictor</h1>
+
+<h5>
+  
+  
+<form action="/predict">
+  <label for="lname">Number of Bedrooms:</label><br>
+  <input type="number" id="beds" name="beds" placeholder=0-50><br><br>
+  <label for="lname">Number of Bathrooms:</label><br>
+  <input type="number" id="baths" name="baths" placeholder=0-50><br><br>
+  <label for="lname">Square Footage:</label><br>
+  <input type="number" id="sqft" name="sqft" placeholder=300-10000><br><br>
+  
+  <label for="lname">Number of stories in building:</label><br>
+  <input type="number" id="stories" name="stories" placeholder=1-80><br><br>
+  <label for="lname">Number of rooms in unit:</label><br>
+  <input type="number" id="rooms" name="rooms" placeholder=1-30><br><br>
+  <label for="lname">Year built:</label><br>
+  <input type="number" id="year_built" name="year_built" placeholder=1833-Present><br><br>
+
+  Building Type:<br><select id=property_type name=property_type>
+  <option value=”Commercial”>Commercial</option>
+  <option value=”Condo”>Condo</option>
+  <option value=”Multi-Family_Home”>Multi-Family Home</option>
+  <option value=”Single-Family_Home”>Single-Family Home</option>
+  <option value=”Other”>Other</option>
+  </select>
+  <br><br>
+  NYC Borough:<br><select id=borough name=borough>
+  <option value=”Bronx”>Bronx</option>
+  <option value=”Brooklyn”>Brooklyn</option>
+  <option value=”Manhattan”>Manhattan</option>
+  <option value=”Queens”>Queens</option>
+  <option value=”Staten_Island”>Staten Island</option>
+</select>
+  <br>
+  
+  <label for="lname" id=desc>Description of building:</label><br>
+  <input type="text" id="description" name="description" placeholder='Optional'><br><br>
+  <input type="submit" value="Predict" method="get">
+
+
+</form>
+  
+</h5>
+
+<h4>Powered by Python/Flask/Heroku</h4>
+
+
+</body>
+</html>
+
+
+
+<style>
+/* CSS styles */
+
+h1 {
+  font-family: Monaco;
+  color: #CE5937;
+  text-align:center;
+  font-size:50px;
+  border: 3px solid #ccaaaa;
+  border-radius: 10px;
+
+}
+	
+h4 {
+  font-family: Monaco;
+  color: #CE5937;
+  padding:30px;
+}  
+  
+h5 {
+  font-family: Monaco;
+  color: #CE5937;
+  padding:30px;
+
+}  
+
+p1{
+font-family: Monaco;
+  color: #FF4444;
+  padding:30px;
+}
+
+body {
+    
+    padding: 20px;
+	border: 20px solid #ccaaaa;
+	background-color: #f0dfdf;
+	border-radius: 10px;
+}
+
+</style>  
+
