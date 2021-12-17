@@ -97,36 +97,27 @@ def landingpage() -> str:
 @app.route('/predict')  # the site to route to, index/main in this case
 def predictpage() -> str:
 	arg_dict=request.args
-	
 	back_to_landing=False
-	for i in arg_dict:
-		print(i)
-		if arg_dict[i]=='' and i!='description':
-		 	back_to_landing=True
-		 	print('blank')
+	try:
 	
-	if int(arg_dict['beds']) not in list(range(51)):
-		print('beds')
+		if int(arg_dict['beds']) not in range(51):
+			back_to_landing=True
+		if int(arg_dict['baths']) not in range(51):
+			back_to_landing=True
+		if int(arg_dict['sqft']) not in range(300,10001):
+			back_to_landing=True
+		if int(arg_dict['stories']) not in range(1,81):
+			back_to_landing=True
+		if int(arg_dict['rooms']) not in range(1,31):
+			back_to_landing=True
+		if int(arg_dict['year_built']) not in range(1833,int(dt.datetime.now().date().strftime("%Y"))+1):
+			back_to_landing=True
+	except:
 		back_to_landing=True
-	if int(arg_dict['baths']) not in range(51):
-		print('baths')
-		back_to_landing=True
-	if int(arg_dict['sqft']) not in range(300,10001):
-		print('sqft')
-		back_to_landing=True
-	if int(arg_dict['stories']) not in range(1,81):
-		print('stories')
-		back_to_landing=True
-	if int(arg_dict['rooms']) not in range(1,31):
-		print('rooms')
-		back_to_landing=True
-	if int(arg_dict['year_built']) not in range(1833,int(dt.datetime.now().date().strftime("%Y"))+1):
-		print('year')
-		back_to_landing=True
-	
+		
 	if back_to_landing:
 		return(flask.render_template('landingpage.html')+"<p1>Please enter valid values.</p1>")
-	
+	print('FLAG 1')
 	
 	arg_frame=pd.DataFrame(arg_dict,index=['0'])
 
