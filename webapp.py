@@ -23,15 +23,15 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score
 
 
-with open('topic_matrix','rb') as f:
+with open('topic_matrix.bin','rb') as f:
 	topic_matrix1=pickle.load(f)
 f.close()
 
-with open('feature_names','rb') as f:
+with open('feature_names.bin','rb') as f:
 	xtffn=pickle.load(f)
 f.close()
 	
-with open('RandomForestRegressor','rb') as f:
+with open('RandomForestRegressor.bin','rb') as f:
 	RFR=pickle.load(f)
 f.close()
 
@@ -189,5 +189,5 @@ def predictpage() -> str:
 	return(flask.render_template('predictpage.html', x_input=request.args, prediction=int(prediction*100)/100))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0') # Local
+    app.run() # Local
 
